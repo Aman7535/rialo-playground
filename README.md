@@ -2,6 +2,7 @@
 
 A **proof-of-concept** demonstrating Rialo's **event-driven blockchain architecture**, where real-world data triggers **deterministic on-chain logic** without oracle polling.
 
+Check here - https://rialo-playground.vercel.app/
 ---
 
 ## 🧠 The Concept
