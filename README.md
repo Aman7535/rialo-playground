@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+⚡ Rialo Playground: Event-Native Execution Engine
 
-## Getting Started
+A proof-of-concept demonstrating Rialo's event-driven blockchain architecture, where real-world data triggers deterministic on-chain logic without oracle polling.
 
-First, run the development server:
+🧠 The Concept
 
-```bash
+Traditional blockchains rely on "polling" oracles to get external data, which introduces latency and complexity. Rialo is event-native.
+
+This project simulates that architecture by fetching a live BTC price stream and feeding it into a local Rule Engine. Instead of passively reading data, the engine actively emits semantic events (like VOLATILITY_SPIKE or MOMENTUM_UP) based on pre-defined logic rules.
+
+Core Features:
+
+Zero Latency Simulation: Toggle between "Rialo Mode" (Instant) and "Legacy Mode" (Simulated Oracle Delay).
+
+Deterministic Logic: Rules are stateless and pure functions.
+
+Live Event Stream: Visualizes the "Mempool" to "Finality" lifecycle.
+
+🚀 Tech Stack
+
+Framework: Next.js 15 (App Router)
+
+Styling: Tailwind CSS (Cyberpunk/Dark Mode)
+
+State: In-Memory Event Store (No Database required for demo)
+
+Data Fetching: SWR (Stale-While-Revalidate)
+
+Icons: Lucide React
+
+🛠️ Installation & Setup
+
+Clone the repo
+
+git clone [https://github.com/Aman7535/rialo-playground.git](https://github.com/Aman7535/rialo-playground.git)
+cd rialo-playground
+
+
+Install dependencies
+
+npm install
+
+
+Run the development server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open your browser
+Navigate to http://localhost:3000.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🎮 How to Use
 
-## Learn More
+Watch the Stream: The dashboard updates every 2 seconds with live simulated data.
 
-To learn more about Next.js, take a look at the following resources:
+Inject Events: Use the Pump or Crash buttons to force specific market conditions.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Toggle Modes: Switch to Legacy Mode to experience the pain of traditional oracle delays vs. the speed of Rialo.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📂 Project Structure
 
-## Deploy on Vercel
+src/
+├── app/
+│   ├── api/events/      # The heartbeat (GET/POST logic)
+│   └── page.tsx         # The Mission Control Dashboard
+├── lib/
+│   ├── eventStore.ts    # In-memory temporary database
+│   ├── priceFetcher.ts  # External API handler
+│   └── rules/           # The "Smart Contract" Logic
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built as a Proof-of-Concept for the Rialo Event-Native Architecture.
