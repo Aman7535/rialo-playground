@@ -57,7 +57,7 @@ Navigate to:
 
 ---
 
-##🎮 How to Use
+## 🎮 How to Use
 
 Watch the Stream
 The dashboard updates every 2 seconds with live simulated data.
@@ -70,7 +70,8 @@ Switch to Legacy Mode to experience traditional oracle delays vs the speed of Ri
 
 ---
 
-##📂 Project Structure
+## 📂 Project Structure
+
 ```
 src/
 ├── app/
