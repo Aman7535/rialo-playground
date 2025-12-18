@@ -19,8 +19,7 @@ import {
   X,
   ToggleLeft,
   ToggleRight,
-  Clock,
-  Database
+  Clock
 } from 'lucide-react';
 
 interface Event {
@@ -143,9 +142,9 @@ export default function Home() {
   return (
     <main className="h-[100dvh] lg:min-h-screen p-2 md:p-8 max-w-7xl mx-auto flex flex-col gap-2 lg:gap-6 overflow-hidden lg:overflow-visible relative">
       
-      {/* === LOGIC TOAST === */}
+      {/* === LOGIC TOAST (Position Fixed for Mobile/PC) === */}
       {logicToast && (
-        <div className="absolute top-4 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-[500px] z-50 animate-in slide-in-from-top-4 duration-300">
+        <div className="absolute left-4 right-4 z-50 bottom-4 md:bottom-auto md:top-4 md:left-1/2 md:-translate-x-1/2 md:w-[500px] animate-in slide-in-from-bottom-4 md:slide-in-from-top-4 duration-300">
           <div className={`p-4 rounded-xl border backdrop-blur-xl shadow-2xl flex gap-4 relative ${
             logicToast.type === 'danger' 
               ? 'bg-rose-950/90 border-rose-500/50' 
@@ -232,7 +231,7 @@ export default function Home() {
               <Rocket className="w-4 h-4 md:w-5 md:h-5 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
               INITIALIZE SYSTEM
             </button>
-            <p className="text-center text-[9px] md:text-[10px] text-gray-600 font-mono flex-shrink-0">
+            <p className="text-center text-[9px] md:text-[10px] text-gray-600 font-mono flex-shrink-0 uppercase">
               MADE BY AMAN FOR RIALO❤️
             </p>
           </div>
@@ -250,7 +249,7 @@ export default function Home() {
             <h1 className="text-lg md:text-3xl font-bold tracking-tight bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
               RIALO <span className="text-white/40 font-mono text-sm md:text-lg">PLAYGROUND</span>
             </h1>
-            <p className="text-gray-500 text-[10px] md:text-sm font-mono hidden md:block">
+            <p className="text-gray-500 text-[10px] md:text-sm font-mono hidden md:block uppercase">
               EVENT-NATIVE EXECUTION ENGINE 
             </p>
           </div>
@@ -291,7 +290,7 @@ export default function Home() {
               <Terminal className="w-4 h-4" /> PROJECT OBJECTIVE
             </h3>
             <p className="text-sm text-gray-300 leading-relaxed mb-4">
-               Traditional blockchains wait for data. Rialo reacts to it. This project visualizes how an event-driven model eliminates latency by turning price updates into instant on-chain actions
+               Traditional blockchains wait for data. Rialo reacts to it. This project visualizes how an event-driven model eliminates latency by turning price updates into instant on-chain actions.
             </p>
           </div>
           <div className="flex flex-col h-full">
@@ -377,7 +376,6 @@ export default function Home() {
                 <Zap className="w-3 h-3" /> Engine Metrics
                 </h3>
                 
-                {/* --- IMPROVED BIG TOGGLE --- */}
                 <div className="flex items-center gap-3 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
                     <span className="text-[10px] lg:text-xs font-bold text-gray-400 uppercase tracking-wider">
                         CHOOSE MODE:
@@ -396,7 +394,6 @@ export default function Home() {
                         )}
                     </button>
                 </div>
-                {/* --------------------------- */}
             </div>
             
             <div className="hidden lg:flex justify-between items-center p-3 rounded-lg bg-white/5 border border-white/5">
@@ -504,7 +501,7 @@ export default function Home() {
             ))}
           </div>
           
-          <div className="p-1 lg:p-2 bg-black/40 border-t border-white/5 text-[9px] lg:text-[10px] text-gray-600 font-mono text-center flex-shrink-0">
+          <div className="p-1 lg:p-2 bg-black/40 border-t border-white/5 text-[9px] lg:text-[10px] text-gray-600 font-mono text-center flex-shrink-0 uppercase">
              /// MADE BY AMAN FOR RIALO❤️
           </div>
         </div>
@@ -519,4 +516,3 @@ function Minus({ className }: { className?: string }) {
       <line x1="5" y1="12" x2="19" y2="12"></line>
     </svg>
   );
-}
