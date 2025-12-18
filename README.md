@@ -1,7 +1,8 @@
-⚡ Rialo Playground: Event-Native Execution Engine
+#⚡ Rialo Playground: Event-Native Execution Engine
 
 A proof-of-concept demonstrating Rialo's event-driven blockchain architecture, where real-world data triggers deterministic on-chain logic without oracle polling.
 
+---
 🧠 The Concept
 
 Traditional blockchains rely on "polling" oracles to get external data, which introduces latency and complexity. Rialo is event-native.
