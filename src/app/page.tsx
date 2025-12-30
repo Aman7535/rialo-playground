@@ -71,7 +71,7 @@ export default function Home() {
         });
       }
       setTimeout(() => setLogicToast(null), 5000);
-  
+   
       addLog(`[RIALO] SIGNAL RECEIVED: ${action}`);
       addLog(`[RIALO] 0x${Math.random().toString(16).substr(2, 6)}... EXECUTED`);
       
@@ -140,7 +140,8 @@ export default function Home() {
   };
 
   return (
-    <main className="h-[100dvh] lg:min-h-screen p-2 md:p-8 max-w-7xl mx-auto flex flex-col gap-2 lg:gap-6 overflow-hidden lg:overflow-visible relative">
+    // UPDATED: Changed max-w-7xl to w-full max-w-[98%] to utilize full width
+    <main className="h-[100dvh] lg:h-[100dvh] p-2 md:p-6 w-full max-w-[98%] mx-auto flex flex-col gap-2 lg:gap-6 overflow-hidden relative bg-[#010101]">
       
       {/* === LOGIC TOAST (Position Fixed for Mobile/PC) === */}
       {logicToast && (
@@ -178,15 +179,15 @@ export default function Home() {
       {/* === 1. INTRO POPUP === */}
       {showIntro && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-300">
-          <div className="w-full max-w-2xl max-h-[85dvh] overflow-y-auto bg-[#0B0F19] border border-violet-500/30 rounded-2xl shadow-2xl p-5 md:p-10 flex flex-col gap-4 md:gap-6 relative custom-scrollbar">
+          <div className="w-full max-w-2xl max-h-[85dvh] overflow-y-auto bg-[#010101] border border-[#A9DDD3]/30 rounded-2xl shadow-2xl p-5 md:p-10 flex flex-col gap-4 md:gap-6 relative custom-scrollbar">
             
-            <div className="absolute top-0 right-0 w-64 h-64 bg-violet-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#A9DDD3]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
             
             <div className="relative z-10 text-center space-y-2 flex-shrink-0">
-              <div className="inline-flex items-center justify-center mb-2 md:mb-4 rounded-xl overflow-hidden border border-violet-500/20 w-12 h-12 md:w-16 md:h-16">
+              <div className="inline-flex items-center justify-center mb-2 md:mb-4 rounded-xl overflow-hidden border border-[#A9DDD3]/20 w-12 h-12 md:w-16 md:h-16">
                 <img src="/logo.jpg" alt="Rialo Logo" className="w-full h-full object-cover" />
               </div>
-              <h1 className="text-xl md:text-4xl font-bold bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+              <h1 className="text-xl md:text-4xl font-bold bg-gradient-to-r from-[#A9DDD3] to-[#E8E3D5] bg-clip-text text-transparent">
                 Welcome to Rialo Playground
               </h1>
               <p className="text-gray-400 text-xs md:text-base font-mono">
@@ -195,16 +196,16 @@ export default function Home() {
             </div>
             
             <div className="grid md:grid-cols-2 gap-3 md:gap-6 relative z-10 my-2 md:my-4">
-              <div className="space-y-2 md:space-y-3 p-3 md:p-4 rounded-xl bg-white/5 border border-white/5 hover:border-violet-500/30 transition-colors">
-                <h3 className="text-violet-400 font-bold flex items-center gap-2 text-xs md:text-sm">
+              <div className="space-y-2 md:space-y-3 p-3 md:p-4 rounded-xl bg-white/5 border border-white/5 hover:border-[#A9DDD3]/30 transition-colors">
+                <h3 className="text-[#A9DDD3] font-bold flex items-center gap-2 text-xs md:text-sm">
                   <Terminal className="w-3 h-3 md:w-4 md:h-4" /> PROJECT OBJECTIVE
                 </h3>
                 <p className="text-xs md:text-sm text-gray-300 leading-relaxed">
                   Traditional blockchains wait for data. Rialo reacts to it. This project visualizes how an event-driven model eliminates latency by turning price updates into instant on-chain actions.
                 </p>
               </div>
-              <div className="space-y-2 md:space-y-3 p-3 md:p-4 rounded-xl bg-white/5 border border-white/5 hover:border-fuchsia-500/30 transition-colors">
-                <h3 className="text-fuchsia-400 font-bold flex items-center gap-2 text-xs md:text-sm">
+              <div className="space-y-2 md:space-y-3 p-3 md:p-4 rounded-xl bg-white/5 border border-white/5 hover:border-[#E8E3D5]/30 transition-colors">
+                <h3 className="text-[#E8E3D5] font-bold flex items-center gap-2 text-xs md:text-sm">
                   <Zap className="w-3 h-3 md:w-4 md:h-4" /> HOW IT WORKS
                 </h3>
                 <p className="text-xs md:text-sm text-gray-300 leading-relaxed">
@@ -218,7 +219,7 @@ export default function Home() {
                 href="https://rialo.io" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs text-violet-400 hover:text-violet-300 transition-colors border-b border-violet-500/30 pb-0.5 hover:border-violet-400"
+                className="inline-flex items-center gap-2 text-xs text-[#A9DDD3] hover:text-[#E8E3D5] transition-colors border-b border-[#A9DDD3]/30 pb-0.5 hover:border-[#A9DDD3]"
               >
                 For more info visit official site rialo.io <ExternalLink className="w-3 h-3" />
               </a>
@@ -226,7 +227,7 @@ export default function Home() {
 
             <button 
               onClick={() => setShowIntro(false)}
-              className="relative z-10 w-full py-3 md:py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white font-bold rounded-xl shadow-lg shadow-violet-500/25 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group flex-shrink-0"
+              className="relative z-10 w-full py-3 md:py-4 bg-gradient-to-r from-[#A9DDD3] to-[#E8E3D5] hover:from-[#A9DDD3]/90 hover:to-[#E8E3D5]/90 text-[#010101] font-bold rounded-xl shadow-lg shadow-[#A9DDD3]/25 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group flex-shrink-0"
             >
               <Rocket className="w-4 h-4 md:w-5 md:h-5 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
               INITIALIZE SYSTEM
@@ -239,14 +240,14 @@ export default function Home() {
       )}
 
       {/* === 2. MAIN DASHBOARD === */}
-      <header className="flex-shrink-0 flex justify-between items-center border-b border-white/10 pb-2 md:pb-4">
+      <header className="flex-shrink-0 flex justify-between items-center border-b border-white/10 pb-2 md:pb-4 px-2">
         <div className="flex items-center gap-3">
-          <div className="relative w-8 h-8 md:w-10 md:h-10 rounded-lg overflow-hidden border border-violet-500/20">
+          <div className="relative w-8 h-8 md:w-10 md:h-10 rounded-lg overflow-hidden border border-[#A9DDD3]/20">
             <img src="/logo.jpg" alt="Rialo Logo" className="w-full h-full object-cover" />
           </div>
 
           <div>
-            <h1 className="text-lg md:text-3xl font-bold tracking-tight bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+            <h1 className="text-lg md:text-3xl font-bold tracking-tight bg-gradient-to-r from-[#A9DDD3] to-[#E8E3D5] bg-clip-text text-transparent">
               RIALO <span className="text-white/40 font-mono text-sm md:text-lg">PLAYGROUND</span>
             </h1>
             <p className="text-gray-500 text-[10px] md:text-sm font-mono hidden md:block uppercase">
@@ -260,7 +261,7 @@ export default function Home() {
             onClick={() => setShowIntro(true)}
             className="flex md:hidden items-center gap-2 px-3 py-1.5 text-[10px] font-mono border border-white/10 rounded-full hover:bg-white/5 transition-colors"
           >
-            <Info className="w-3 h-3 text-violet-400" />
+            <Info className="w-3 h-3 text-[#A9DDD3]" />
             INFO
           </button>
 
@@ -268,7 +269,7 @@ export default function Home() {
             onClick={() => setShowInfo(!showInfo)}
             className="hidden md:flex items-center gap-2 px-4 py-2 text-xs font-mono border border-white/10 rounded-full hover:bg-white/5 transition-colors"
           >
-            <Info className="w-4 h-4 text-violet-400" />
+            <Info className="w-4 h-4 text-[#A9DDD3]" />
             {showInfo ? 'HIDE CONTEXT' : 'INFO'}
           </button>
 
@@ -284,9 +285,9 @@ export default function Home() {
 
       {/* --- CONTEXT PANEL (Desktop) --- */}
       {showInfo && (
-        <section className="hidden md:grid animate-slide-in grid-cols-2 gap-6 p-6 rounded-2xl bg-violet-950/10 border border-violet-500/20 flex-shrink-0">
+        <section className="hidden md:grid animate-slide-in grid-cols-2 gap-6 p-6 rounded-2xl bg-[#A9DDD3]/5 border border-[#A9DDD3]/20 flex-shrink-0 mx-2">
           <div>
-            <h3 className="text-violet-400 font-bold mb-2 flex items-center gap-2">
+            <h3 className="text-[#A9DDD3] font-bold mb-2 flex items-center gap-2">
               <Terminal className="w-4 h-4" /> PROJECT OBJECTIVE
             </h3>
             <p className="text-sm text-gray-300 leading-relaxed mb-4">
@@ -294,7 +295,7 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col h-full">
-            <h3 className="text-fuchsia-400 font-bold mb-2 flex items-center gap-2">
+            <h3 className="text-[#E8E3D5] font-bold mb-2 flex items-center gap-2">
               <Zap className="w-4 h-4" /> HOW IT WORKS
             </h3>
             <p className="text-sm text-gray-300 leading-relaxed mb-4">
@@ -306,7 +307,7 @@ export default function Home() {
                 href="https://rialo.io" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs text-violet-400 hover:text-violet-300 transition-colors"
+                className="inline-flex items-center gap-2 text-xs text-[#A9DDD3] hover:text-[#E8E3D5] transition-colors"
               >
                 For more info visit official site rialo.io <ExternalLink className="w-3 h-3" />
               </a>
@@ -316,13 +317,14 @@ export default function Home() {
       )}
 
       {/* --- CONTENT AREA --- */}
-      <div className="flex flex-col lg:grid lg:grid-cols-12 gap-3 lg:gap-6 flex-1 overflow-hidden lg:overflow-visible">
+      {/* UPDATED: grid layout to use full width and adjusted column spans */}
+      <div className="flex flex-col lg:grid lg:grid-cols-12 gap-3 lg:gap-6 flex-1 lg:h-full overflow-hidden px-2">
         
-        <div className="lg:col-span-4 flex flex-col gap-2 lg:gap-4 flex-shrink-0">
+        <div className="lg:col-span-3 flex flex-col gap-2 lg:gap-4 flex-shrink-0 lg:h-full">
           <div className="flex flex-row lg:flex-col gap-2 lg:gap-3 lg:h-auto">
             
             {/* Price Card */}
-            <div className="flex-1 lg:flex-none relative overflow-hidden p-3 lg:p-6 rounded-xl lg:rounded-2xl border border-white/10 bg-[#0B0F19] backdrop-blur-xl shadow-2xl flex flex-col justify-center">
+            <div className="flex-1 lg:flex-none relative overflow-hidden p-3 lg:p-6 rounded-xl lg:rounded-2xl border border-white/10 bg-[#010101] backdrop-blur-xl shadow-2xl flex flex-col justify-center">
               
               <div className="absolute top-0 right-0 p-2 lg:p-4 opacity-10 block">
                 <Cpu className="w-12 h-12 lg:w-24 lg:h-24" />
@@ -344,7 +346,7 @@ export default function Home() {
             </div>
 
             {/* Simulation Buttons */}
-            <div className="flex-1 lg:flex-none p-2 lg:p-6 rounded-xl lg:rounded-2xl border border-white/10 bg-[#0B0F19] flex flex-col justify-center gap-1 lg:gap-4">
+            <div className="flex-1 lg:flex-none p-2 lg:p-6 rounded-xl lg:rounded-2xl border border-white/10 bg-[#010101] flex flex-col justify-center gap-1 lg:gap-4">
                <h3 className="hidden lg:flex text-xs text-gray-500 font-bold uppercase tracking-widest items-center gap-2">
                 <PlayCircle className="w-3 h-3" /> Simulation
               </h3>
@@ -370,7 +372,7 @@ export default function Home() {
           </div>
 
           {/* === ENGINE METRICS & LEGACY TOGGLE === */}
-          <div className="flex lg:flex p-2 lg:p-6 rounded-xl lg:rounded-2xl border border-white/10 bg-[#0B0F19]/50 flex-col gap-2 lg:gap-4 h-32 lg:h-auto lg:flex-1">
+          <div className="flex lg:flex p-2 lg:p-6 rounded-xl lg:rounded-2xl border border-white/10 bg-[#010101]/50 flex-col gap-2 lg:gap-4 h-32 lg:h-auto lg:flex-1">
             <div className="flex items-center justify-between w-full">
                 <h3 className="flex text-[10px] lg:text-xs text-gray-500 font-bold uppercase tracking-widest items-center gap-2">
                 <Zap className="w-3 h-3" /> Engine Metrics
@@ -384,13 +386,13 @@ export default function Home() {
                         onClick={() => setIsLegacyMode(!isLegacyMode)}
                         className="flex items-center gap-1.5 cursor-pointer hover:opacity-80 transition-opacity active:scale-95"
                     >
-                        <span className={`text-[10px] lg:text-xs font-bold ${isLegacyMode ? 'text-gray-500' : 'text-violet-400'}`}>
+                        <span className={`text-[10px] lg:text-xs font-bold ${isLegacyMode ? 'text-gray-500' : 'text-[#A9DDD3]'}`}>
                             {isLegacyMode ? 'LEGACY' : 'RIALO'}
                         </span>
                         {isLegacyMode ? (
                             <ToggleLeft className="w-8 h-8 text-gray-500" />
                         ) : (
-                            <ToggleRight className="w-8 h-8 text-violet-500" />
+                            <ToggleRight className="w-8 h-8 text-[#A9DDD3]" />
                         )}
                     </button>
                 </div>
@@ -398,7 +400,7 @@ export default function Home() {
             
             <div className="hidden lg:flex justify-between items-center p-3 rounded-lg bg-white/5 border border-white/5">
               <span className="text-xs text-gray-400">Mode</span>
-              <span className={`text-xs font-mono ${isLegacyMode ? 'text-yellow-500' : 'text-fuchsia-400'}`}>
+              <span className={`text-xs font-mono ${isLegacyMode ? 'text-yellow-500' : 'text-[#A9DDD3]'}`}>
                 {isLegacyMode ? 'ORACLE_POLLING' : 'EVENT_NATIVE'}
               </span>
             </div>
@@ -425,10 +427,11 @@ export default function Home() {
         </div>
 
         {/* === RIGHT COLUMN (EVENT LIST) === */}
-        <div className="lg:col-span-8 flex flex-col rounded-xl lg:rounded-2xl border border-white/10 bg-[#0B0F19] overflow-hidden flex-1 lg:h-auto">
+        {/* UPDATED: Increased col-span to fill the rest of the space (from 8 to 9) */}
+        <div className="lg:col-span-9 flex flex-col rounded-xl lg:rounded-2xl border border-white/10 bg-[#010101] overflow-hidden flex-1 lg:h-full">
           <div className="p-2 lg:p-4 border-b border-white/10 bg-white/5 flex items-center justify-between flex-shrink-0">
             <div className="flex items-center gap-2 text-xs lg:text-sm font-mono text-gray-300">
-              <Terminal className="w-3 h-3 lg:w-4 lg:h-4 text-violet-400" />
+              <Terminal className="w-3 h-3 lg:w-4 lg:h-4 text-[#A9DDD3]" />
               <span>LIVE_LOG</span>
             </div>
             <div className="flex gap-1.5">
@@ -471,8 +474,8 @@ export default function Home() {
                       'bg-gray-800/50 border-gray-700'}
                   `}>
                     {evt.type === 'PRICE_UP' ? <ArrowUpRight className="w-4 h-4 lg:w-5 lg:h-5 text-emerald-400" /> :
-                     evt.type === 'PRICE_DOWN' ? <ArrowDownRight className="w-4 h-4 lg:w-5 lg:h-5 text-rose-400" /> :
-                     <Activity className="w-4 h-4 lg:w-5 lg:h-5 text-gray-400" />}
+                      evt.type === 'PRICE_DOWN' ? <ArrowDownRight className="w-4 h-4 lg:w-5 lg:h-5 text-rose-400" /> :
+                      <Activity className="w-4 h-4 lg:w-5 lg:h-5 text-gray-400" />}
                   </div>
 
                   <div className="flex flex-col">
@@ -502,7 +505,7 @@ export default function Home() {
           </div>
           
           <div className="p-1 lg:p-2 bg-black/40 border-t border-white/5 text-[9px] lg:text-[10px] text-gray-600 font-mono text-center flex-shrink-0 uppercase">
-             /// MADE BY AMAN FOR RIALO❤️
+              /// MADE BY AMAN FOR RIALO❤️
           </div>
         </div>
       </div>
